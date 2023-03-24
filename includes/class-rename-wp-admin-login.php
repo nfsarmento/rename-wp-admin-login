@@ -222,7 +222,7 @@ if ( defined( 'ABSPATH' ) && ! class_exists( 'Rename_WP_Admin_Login' ) ) {
 			$out = '';
 
 			if ( is_multisite() && is_super_admin() && is_plugin_active_for_network( $this->rwalplugindir() ) ) {
-				$out .= '<p>' . sprintf( __( 'To set a networkwide default, go to %s.', 'rename-wp-admin-login' ), '<a href="' . network_admin_url( 'settings.php#rwal-page-input' ) . '">' . __( 'Network Settings', 'rename-wp-admin-login' ) . '</a>') . '</p>';
+				$out .= '<p>' . sprintf( __( 'To set a networkwide default, go to %s.', 'rename-wp-admin-login' ), '<a href="' . esc_attr( network_admin_url( 'settings.php#rwal-page-input' ) ) . '">' . __( 'Network Settings', 'rename-wp-admin-login' ) . '</a>') . '</p>';
 			}
 
 			echo $out;
